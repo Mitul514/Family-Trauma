@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc1021c81b562384db9542bb3bef0a88, type: 3}
+  m_Name: Create
+  m_EditorClassIdentifier: 
+  level: 0
+  gridX: 0
+  gridY: 0
+  moves: 0
+  circleDatas:
+  - Name: 
+    Id: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    SourceX: 0
+    SourceY: 0
+    DestinationX: 0
+    DestinationY: 0
