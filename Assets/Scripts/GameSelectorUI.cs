@@ -6,8 +6,10 @@ using UnityEngine.UI;
 public class GameSelectorUI : MonoBehaviour
 {
     [SerializeField] private Button playBtn;
-    [SerializeField] private GameObject pfFirstTest, pfSecondTest;
-    private GameObject firstpf, secondpf;
+    [SerializeField] private BoxManager boxManagerPf;
+    [SerializeField] private BoxesGameHudController hudController;
+
+    private BoxManager firstpf;
 
     private void OnEnable()
     {
@@ -27,22 +29,15 @@ public class GameSelectorUI : MonoBehaviour
 
     private void ShowFirstTest()
     {
-        UnloadGO();
-        firstpf = Instantiate(pfFirstTest);
+        firstpf = Instantiate(boxManagerPf);
+        hudController.gameObject.SetActive(true);
+        hudController.SetData(firstpf);
     }
 
-    private void ShowSecondTest()
+    public void UnloadGO()
     {
-        UnloadGO();
-        secondpf = Instantiate(pfSecondTest);
-    }
-
-    private void UnloadGO()
-    {
-        if (secondpf != null)
-            Destroy(secondpf);
-
         if (firstpf != null)
-            Destroy(firstpf);
+            Destroy(firstpf.gameObject);
+        playBtn.gameObject.SetActive(true);
     }
 }

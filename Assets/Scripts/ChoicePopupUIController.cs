@@ -8,8 +8,8 @@ using UnityEngine.UI;
 
 public class ChoicePopupUIController : MonoBehaviour
 {
-    [SerializeField] private string popupTitle;
-    [SerializeField, TextArea(5, 5)] private string popupMsg;
+    [SerializeField] public string popupTitle;
+    [SerializeField, TextArea(5, 5)] public string popupMsg;
     [SerializeField] private Button continueBtn, backBtn;
     [SerializeField] private TextMeshProUGUI popupHeaderTxt, popupMsgTxt;
 

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1520605760282776450}
   - component: {fileID: 1520605760282776448}
   - component: {fileID: 1520605760282776452}
+  - component: {fileID: 4042186185267073280}
   m_Layer: 0
   m_Name: Player-Mother
   m_TagString: Untagged
@@ -115,3 +116,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enititySO: {fileID: 11400000, guid: 830949778a6ee8142a06fda8fbd17fef, type: 2}
+--- !u!114 &4042186185267073280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520605760282776449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57fa0d13065ae9943aebc46b797a0514, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: F1
+  continueBtn: {fileID: 0}
+  dialogueSet: {fileID: 11400000, guid: 54b5b6a8f2105d54393cc435db23e041, type: 2}
+  keyCode: 0

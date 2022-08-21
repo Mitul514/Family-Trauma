@@ -10,14 +10,13 @@ public class GameplayManager : MonoBehaviour
     [SerializeField] private SceneTransition sceneTransition;
     [SerializeField] private DialogueTrigger firstdialogueTrigger;
     [SerializeField] private List<GameObject> objectsToDisbleOnDialogueOn;
-    [SerializeField] private GameObject dialoguePanel;
 
     private void Start()
     {
         if (PlayerPrefs.GetInt(key) == 0)
         {
             PlayerPrefs.SetInt(key, 1);
-            dialoguePanel.SetActive(true);
+            dialogueManager.gameObject.SetActive(true);
             EnableDisableObjects(false);
             firstdialogueTrigger.StartDialogue();
         }

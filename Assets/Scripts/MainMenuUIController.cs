@@ -9,7 +9,7 @@ public class MainMenuUIController : MonoBehaviour
     [SerializeField] private Button playBtn;
     [SerializeField] private Button exitBtn;
     [SerializeField] private SceneTransition sceneTransition;
-    private string sceneToGo = "00_GameplayScene";
+    [SerializeField] private string sceneToGo = "01_GameplayScene";
     private const string key = "FirstLaunch";
 
     private void Start()

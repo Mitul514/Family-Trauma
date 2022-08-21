@@ -8,6 +8,8 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] private DialogueScriptable dialogueSet;
     [SerializeField, Tooltip("To test set key and play")] private KeyCode keyCode;
 
+    public bool isThisDialogueSetPlayed => dialogueSet.isPlayed;
+
     private void OnEnable()
     {
         continueBtn.onClick.AddListener(TriggerDialogue);
@@ -21,7 +23,7 @@ public class DialogueTrigger : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(keyCode))
-            DialogueManager.Instance.StartDialogue(dialogueSet.dialogue);
+            DialogueManager.Instance.StartDialogue(dialogueSet);
     }
 
     private void TriggerDialogue()
@@ -34,6 +36,6 @@ public class DialogueTrigger : MonoBehaviour
 
     public void StartDialogue()
     {
-        DialogueManager.Instance.StartDialogue(dialogueSet.dialogue);
+        DialogueManager.Instance.StartDialogue(dialogueSet);
     }
 }

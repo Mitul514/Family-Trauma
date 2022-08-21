@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RowLength: 6
   ColLength: 6
+  minesCount: 2
+  totalChances: 3
   TileSize: 1.1
   AdjScale: 1

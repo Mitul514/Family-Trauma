@@ -8,10 +8,9 @@ public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance;
     [SerializeField] private Text sentenceTxt, nameTxt;
-    [SerializeField] private GameObject dialoguePanel;
 
     public Action onDialogueEnd;
-
+    private DialogueScriptable m_scriptable;
     private Queue<Dialogue> dialogues = new Queue<Dialogue>();
 
     private void Awake()
@@ -24,8 +23,12 @@ public class DialogueManager : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
-    public void StartDialogue(Dialogue[] dialogue)
+    public void StartDialogue(DialogueScriptable scriptable)
     {
+        if (m_scriptable == null)
+            m_scriptable = scriptable;
+
+        Dialogue[] dialogue = scriptable.dialogue;
         dialogues.Clear();
 
         for (int i = 0; i < dialogue.Length; i++)
@@ -59,7 +62,8 @@ public class DialogueManager : MonoBehaviour
 
     private void EndDialogue()
     {
-        dialoguePanel.SetActive(false);
+        m_scriptable.isPlayed = true;
+        gameObject.SetActive(false);
         print("End ..... ");
         onDialogueEnd?.Invoke();
     }

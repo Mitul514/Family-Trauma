@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: F2
   dialogue:
-  - Name: NPC 1
+  - Name: Mother
     Speech:
     - Hello how may i help you
   - Name: Player
     Speech:
     - Im looking for an item
-  - Name: NPC 1
+  - Name: Mother
     Speech:
     - 'You can look into our inventory '

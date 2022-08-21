@@ -32,13 +32,12 @@ public class SceneTransition : MonoBehaviour
         animator.SetTrigger("Exit");
         yield return new WaitForSeconds(delay);
 
+        if (TryGetComponent(out CameraAssigner assigner))
+            assigner.AssignCamera();
         if (!SceneManager.GetActiveScene().Equals(sceneName) && !string.IsNullOrEmpty(sceneName))
             SceneManager.LoadScene(sceneName);
 
-        if (TryGetComponent(out CameraAssigner assigner))
-            assigner.AssignCamera();
-
-        animator.SetTrigger("Enter");
+        //animator.SetTrigger("Enter");
         yield return new WaitForSeconds(delay);
         gameObject.SetActive(false);
     }

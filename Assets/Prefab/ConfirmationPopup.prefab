@@ -756,8 +756,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ebd9dcc86c5f7146bb60de916278108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popupTitle: 
-  popupMsg: 
+  popupTitle: Confirmation
+  popupMsg: Want to leave or continue Playing?
   continueBtn: {fileID: 4666041181033020492}
   backBtn: {fileID: 4666041180275008263}
   popupHeaderTxt: {fileID: 4666041179211804400}

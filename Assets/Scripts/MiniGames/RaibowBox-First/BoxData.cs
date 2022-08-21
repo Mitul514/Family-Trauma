@@ -7,6 +7,8 @@ public class BoxData : ScriptableObject
 {
     public int RowLength;
     public int ColLength;
+    public int minesCount;
+    public int totalChances;
     [Tooltip("Set the box size between 1 to 5 tiles")]
     [Range(0f, 5f)]
     public float TileSize;

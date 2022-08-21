@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,10 +7,30 @@ public class PlayerController : MonoBehaviour
 {
     [Range(0, 100)]
     [SerializeField] private float speed;
-    [SerializeField] private EnititySO singleEntity, sceneChangeEntity;
+    [SerializeField] private EnititySO singleEntity, sceneChangeEntity, doorEntity;
     [SerializeField] private SceneTransition sceneTransition;
-    [SerializeField] private string sceneToGo = "01_GameplayScene";
+    [SerializeField] private string sceneToGo = "02_GameplayScene";
+    [SerializeField] private DialogueManager dialogueManager;
+
+    private string sceneToGo1 = "01_GameplayScene";
     private float x, y;
+    private bool stopMovement;
+
+    private void OnEnable()
+    {
+        dialogueManager.onDialogueEnd += OnDialogueEnded;
+    }
+
+    private void OnDisable()
+    {
+        dialogueManager.onDialogueEnd -= OnDialogueEnded;
+    }
+
+    private void OnDialogueEnded()
+    {
+        dialogueManager.gameObject.SetActive(false);
+        stopMovement = false;
+    }
 
     void Update()
     {
@@ -19,6 +40,8 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (stopMovement)
+            return;
         transform.position += new Vector3(x * Time.deltaTime * speed, y * Time.deltaTime * speed, 0);
     }
 
@@ -32,7 +55,14 @@ public class PlayerController : MonoBehaviour
             }
             else if (enitity.EnititySO == sceneChangeEntity)
             {
-                sceneTransition.StartSceneTransition(sceneToGo);
+                sceneTransition.StartSceneTransition(sceneToGo1);
+            }
+            else if (enitity.EnititySO == singleEntity && enitity.TryGetComponent(out DialogueTrigger dialogueTrigger) &&
+                !dialogueTrigger.isThisDialogueSetPlayed)
+            {
+                dialogueManager.gameObject.SetActive(true);
+                stopMovement = true;
+                dialogueTrigger.StartDialogue();
             }
         }
 
