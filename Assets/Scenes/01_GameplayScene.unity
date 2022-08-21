@@ -1988,6 +1988,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7222983352675343958, guid: 4feee26da6ab21645955772d42b26c03, type: 3}
+      propertyPath: sceneToGo
+      value: FirstMiniGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 7222983352675343958, guid: 4feee26da6ab21645955772d42b26c03, type: 3}
       propertyPath: singleEntity
       value: 
       objectReference: {fileID: 11400000, guid: 830949778a6ee8142a06fda8fbd17fef, type: 2}

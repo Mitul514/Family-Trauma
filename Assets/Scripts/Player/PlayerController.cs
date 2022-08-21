@@ -8,8 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private EnititySO singleEntity, sceneChangeEntity;
     [SerializeField] private SceneTransition sceneTransition;
-
-    private string sceneToGo = "01_GameplayScene";
+    [SerializeField] private string sceneToGo = "01_GameplayScene";
     private float x, y;
 
     void Update()
@@ -28,6 +27,10 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.TryGetComponent(out EntityType enitity))
         {
             if (enitity.EnititySO == sceneChangeEntity)
+            {
+                sceneTransition.StartSceneTransition(sceneToGo);
+            }
+            else if (enitity.EnititySO == sceneChangeEntity)
             {
                 sceneTransition.StartSceneTransition(sceneToGo);
             }
