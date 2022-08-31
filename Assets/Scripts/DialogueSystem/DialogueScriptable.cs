@@ -14,6 +14,7 @@ public struct Dialogue
 public class DialogueScriptable : ScriptableObject
 {
     public string id;
+    public bool isCompleted;
     public bool isPlayed;
     public Dialogue[] dialogue;
 }

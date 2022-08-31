@@ -6,10 +6,12 @@ using UnityEngine;
 public class GameplayManager : MonoBehaviour
 {
     private const string key = "FirstLaunch";
-    [SerializeField] private DialogueManager dialogueManager;
-    [SerializeField] private SceneTransition sceneTransition;
+    [SerializeField] protected DialogueManager dialogueManager;
+    [SerializeField] protected SceneTransition sceneTransition;
+    [SerializeField] protected List<GameObject> objectsToDisbleOnDialogueOn;
+
+    [Header("DialogueTriggers")]
     [SerializeField] private DialogueTrigger firstdialogueTrigger;
-    [SerializeField] private List<GameObject> objectsToDisbleOnDialogueOn;
 
     private void Start()
     {
@@ -18,24 +20,23 @@ public class GameplayManager : MonoBehaviour
             PlayerPrefs.SetInt(key, 1);
             dialogueManager.gameObject.SetActive(true);
             EnableDisableObjects(false);
-            firstdialogueTrigger.StartDialogue();
+            firstdialogueTrigger.StartDialogue("");
+            //firstdialogueTrigger.gameObject.SetActive(true);
         }
     }
 
     private void OnEnable()
     {
-        dialogueManager.onDialogueEnd += OnDialogueEnded;
-    }
-
-    private void OnDisable()
-    {
-        dialogueManager.onDialogueEnd -= OnDialogueEnded;
+        //firstdialogueTrigger.gameObject.SetActive(false);
+        if (!firstdialogueTrigger.isThisDialogueSetPlayed)
+            firstdialogueTrigger.OnTriggereDialogueEnd += OnDialogueEnded;
     }
 
     private void OnDialogueEnded()
     {
-        sceneTransition.StartSceneTransition();
+        firstdialogueTrigger.OnTriggereDialogueEnd -= OnDialogueEnded;
         EnableDisableObjects(true);
+        //firstdialogueTrigger.gameObject.SetActive(false);
     }
 
     private void EnableDisableObjects(bool enable)

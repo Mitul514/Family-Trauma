@@ -10,25 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bacd6b84da1a8f747afd7622046039b3, type: 3}
-  m_Name: F1
+  m_Name: S1
   m_EditorClassIdentifier: 
-  id: F1
+  id: S1
   isPlayed: 0
   dialogue:
-  - Name: Author
+  - Name: Shopkeeper
     Speech:
-    - Welcome,
-  - Name: Author
+    - Hello, how are you doing
+  - Name: Sean
     Speech:
-    - A life of a boy who wants be a good son and a good friends with everyone, he
-      never denies to anyone's request.
-  - Name: Author
+    - 'Hello, Im good '
+  - Name: Sean
     Speech:
-    - But with so many requests comes harsh choices.
-  - Name: Author
+    - Can you give me the items that are mentioned in the list.
+  - Name: Shopkeeper
     Speech:
-    - 'Come lets have play the life of Sean and help him make the better choice of
-      his life. '
-  - Name: Author
+    - "Yes sure\u2026\u2026\u2026\u2026\u2026 Here You go."
+  - Name: Sean
     Speech:
-    - First Go and talk to your mother in the kitchen
+    - Thanks.

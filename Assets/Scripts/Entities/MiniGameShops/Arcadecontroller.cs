@@ -1,37 +1,29 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShopController : MonoBehaviour
+public class Arcadecontroller : MonoBehaviour
 {
-    private bool isInitialized;
-    [SerializeField] private bool isLocked;
+    [SerializeField] private bool isLocked = true;
     [SerializeField] private EnititySO playerEntity;
+    [SerializeField] private SceneTransition sceneTransition;
     [SerializeField] private DialogueTrigger dialogueTrigger;
-    [SerializeField] private DialogueScriptable objectiveSO;
-
+    [SerializeField] private string sceneToGo = "02_GameplayScene";
     private PlayerController player;
-
-    public bool DialogueEnd { get; private set; }
 
     private void OnEnable()
     {
-        dialogueTrigger.OnTriggereDialogueEnd += OnDialogueEnd;
+        dialogueTrigger.OnTriggereDialogueEnd += ShowMiniGame;
     }
 
     private void OnDisable()
     {
-        dialogueTrigger.OnTriggereDialogueEnd -= OnDialogueEnd;
+        dialogueTrigger.OnTriggereDialogueEnd -= ShowMiniGame;
     }
 
-    private void OnDialogueEnd()
+    public void SetLock(bool enable)
     {
-        if (player != null)
-        {
-            player.StopMovement = false;
-            objectiveSO.isCompleted = true;
-        }
+        isLocked = enable;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -39,20 +31,29 @@ public class ShopController : MonoBehaviour
         if (collision.gameObject.TryGetComponent(out EntityType enitity) && !isLocked)
         {
             player = enitity.GetComponent<PlayerController>();
+
             if (enitity.EnititySO == playerEntity)
             {
-                PlayShopDialogue();
+                PlayArcadeDialogue();
             }
         }
     }
 
-    private void PlayShopDialogue()
+    private void PlayArcadeDialogue()
     {
         if (player != null)
         {
             player.StopMovement = true;
         }
-        DialogueEnd = false;
         dialogueTrigger.StartDialogue("");
+    }
+
+    private void ShowMiniGame()
+    {
+        if (player != null)
+        {
+            player.StopMovement = false;
+        }
+        sceneTransition.StartSceneTransition(sceneToGo);
     }
 }

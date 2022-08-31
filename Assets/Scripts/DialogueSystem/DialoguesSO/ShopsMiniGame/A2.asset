@@ -10,21 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bacd6b84da1a8f747afd7622046039b3, type: 3}
-  m_Name: F2
+  m_Name: A2
   m_EditorClassIdentifier: 
-  id: F2
-  isCompleted: 0
+  id: A2
   isPlayed: 0
   dialogue:
-  - Name: Mother
+  - Name: Manager
     Speech:
-    - Hello
-  - Name: Player
+    - Welcome
+  - Name: Manager
     Speech:
-    - Hi Mom
-  - Name: Mother
-    Speech:
-    - Sean can you get me this list of things from the market before lunch time.
-  - Name: Player
-    Speech:
-    - Yes Mom. I am on my way.
+    - Let's Go and play

@@ -8,20 +8,11 @@ public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance;
     [SerializeField] private Text sentenceTxt, nameTxt;
+    [SerializeField] private GameObject continueBtn;
 
     public Action onDialogueEnd;
     private DialogueScriptable m_scriptable;
     private Queue<Dialogue> dialogues = new Queue<Dialogue>();
-
-    private void Awake()
-    {
-        if (Instance == null)
-            Instance = this;
-        else
-            Destroy(Instance);
-
-        DontDestroyOnLoad(this);
-    }
 
     public void StartDialogue(DialogueScriptable scriptable)
     {
@@ -40,8 +31,10 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
+        continueBtn.SetActive(false);
         if (dialogues.Count == 0)
         {
+            onDialogueEnd?.Invoke();
             EndDialogue();
             return;
         }
@@ -58,6 +51,7 @@ public class DialogueManager : MonoBehaviour
             sentenceTxt.text += letter;
             yield return new WaitForSeconds(0.05f);
         }
+        continueBtn.SetActive(true);
     }
 
     private void EndDialogue()
@@ -65,6 +59,6 @@ public class DialogueManager : MonoBehaviour
         m_scriptable.isPlayed = true;
         gameObject.SetActive(false);
         print("End ..... ");
-        onDialogueEnd?.Invoke();
+        //onDialogueEnd?.Invoke();
     }
 }

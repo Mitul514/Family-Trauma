@@ -1,41 +1,57 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    [SerializeField] private string id;
-    [SerializeField] private Button continueBtn;
-    [SerializeField] private DialogueScriptable dialogueSet;
-    [SerializeField, Tooltip("To test set key and play")] private KeyCode keyCode;
+    [SerializeField] protected string id;
+    [SerializeField] protected DialogueScriptable dialogueSet;
+    [SerializeField] protected Button continueBtn;
+    [SerializeField] protected DialogueManager dialogueManager;
 
+    public Action OnTriggereDialogueEnd;
     public bool isThisDialogueSetPlayed => dialogueSet.isPlayed;
+
+    private void Awake()
+    {
+        gameObject.SetActive(false);
+    }
 
     private void OnEnable()
     {
         continueBtn.onClick.AddListener(TriggerDialogue);
+        dialogueManager.onDialogueEnd += onDialogueEnd;
     }
 
     private void OnDisable()
     {
         continueBtn?.onClick.RemoveListener(TriggerDialogue);
+        dialogueManager.onDialogueEnd -= onDialogueEnd;
     }
 
-    private void Update()
+    protected virtual void onDialogueEnd()
     {
-        if (Input.GetKeyDown(keyCode))
-            DialogueManager.Instance.StartDialogue(dialogueSet);
+        dialogueManager.gameObject.SetActive(false);
+        OnTriggereDialogueEnd?.Invoke();
+        dialogueSet.isPlayed = true;
+        gameObject.SetActive(false);
     }
 
-    private void TriggerDialogue()
+    protected virtual void TriggerDialogue()
     {
         if (!string.Equals(id, dialogueSet.id))
             return;
 
-        DialogueManager.Instance.DisplayNextSentence();
+        dialogueManager.DisplayNextSentence();
     }
 
-    public void StartDialogue()
+    public virtual void StartDialogue(string id)
     {
-        DialogueManager.Instance.StartDialogue(dialogueSet);
+        if (string.IsNullOrEmpty(id))
+            id = this.id;
+
+        gameObject.SetActive(true);
+        dialogueManager.gameObject.SetActive(true);
+        dialogueManager.StartDialogue(dialogueSet);
     }
 }

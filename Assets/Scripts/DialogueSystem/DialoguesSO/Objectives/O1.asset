@@ -10,21 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bacd6b84da1a8f747afd7622046039b3, type: 3}
-  m_Name: F2
+  m_Name: O1
   m_EditorClassIdentifier: 
-  id: F2
+  id: O1
   isCompleted: 0
   isPlayed: 0
   dialogue:
-  - Name: Mother
+  - Name: Objective
     Speech:
-    - Hello
-  - Name: Player
-    Speech:
-    - Hi Mom
-  - Name: Mother
-    Speech:
-    - Sean can you get me this list of things from the market before lunch time.
-  - Name: Player
-    Speech:
-    - Yes Mom. I am on my way.
+    - Go out and search the Grocery Shop and get these list of items

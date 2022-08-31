@@ -533,3 +533,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sentenceTxt: {fileID: 1693626331465201127}
   nameTxt: {fileID: 1693626329972951038}
+  continueBtn: {fileID: 1693626330514915056}

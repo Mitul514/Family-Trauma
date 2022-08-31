@@ -10,25 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bacd6b84da1a8f747afd7622046039b3, type: 3}
-  m_Name: F1
+  m_Name: F3
   m_EditorClassIdentifier: 
-  id: F1
+  id: F3
   isPlayed: 0
   dialogue:
-  - Name: Author
+  - Name: Sean
     Speech:
-    - Welcome,
-  - Name: Author
+    - Hi Im back
+  - Name: Mother
     Speech:
-    - A life of a boy who wants be a good son and a good friends with everyone, he
-      never denies to anyone's request.
-  - Name: Author
+    - Thank you my son, you are the best.
+  - Name: Sean
     Speech:
-    - But with so many requests comes harsh choices.
-  - Name: Author
+    - Thanks Mom.
+  - Name: Mother
     Speech:
-    - 'Come lets have play the life of Sean and help him make the better choice of
-      his life. '
-  - Name: Author
+    - and your dad was asking for you, I think he needs some help.
+  - Name: Sean
     Speech:
-    - First Go and talk to your mother in the kitchen
+    - Ok mom

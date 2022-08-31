@@ -10,21 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bacd6b84da1a8f747afd7622046039b3, type: 3}
-  m_Name: F2
+  m_Name: F4
   m_EditorClassIdentifier: 
-  id: F2
+  id: F4
   isCompleted: 0
-  isPlayed: 0
+  isPlayed: 1
   dialogue:
-  - Name: Mother
+  - Name: Sean
     Speech:
-    - Hello
-  - Name: Player
+    - Hello dad, mom siad u need some help.
+  - Name: Father
     Speech:
-    - Hi Mom
-  - Name: Mother
+    - Yes Sean Can you help me buy some tools to fix the car.
+  - Name: Sean
     Speech:
-    - Sean can you get me this list of things from the market before lunch time.
-  - Name: Player
+    - "Yes Dad, but don\u2019t tell me to fix the car after this."
+  - Name: Father
     Speech:
-    - Yes Mom. I am on my way.
+    - "Haha. It\u2019s just that I am little lazy to go out without the car."
+  - Name: Sean
+    Speech:
+    - Ok on my way
