@@ -9,6 +9,7 @@ public class Arcadecontroller : MonoBehaviour
     [SerializeField] private SceneTransition sceneTransition;
     [SerializeField] private DialogueTrigger dialogueTrigger;
     [SerializeField] private string sceneToGo = "02_GameplayScene";
+    [SerializeField] private string objectiveId, narrativeIdForArcade;
     private PlayerController player;
 
     private void OnEnable()
@@ -48,12 +49,14 @@ public class Arcadecontroller : MonoBehaviour
         dialogueTrigger.StartDialogue("");
     }
 
-    private void ShowMiniGame()
+    private void ShowMiniGame(DialogueTrigger trigger)
     {
         if (player != null)
         {
             player.StopMovement = false;
         }
+
+        PlayerPrefController.Instance.UpdateObjectiveList(trigger.dialogueId);
         sceneTransition.StartSceneTransition(sceneToGo);
     }
 }

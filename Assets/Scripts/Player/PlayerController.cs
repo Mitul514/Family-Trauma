@@ -23,4 +23,20 @@ public class PlayerController : MonoBehaviour
             return;
         transform.position += new Vector3(x * Time.deltaTime * speed, y * Time.deltaTime * speed, 0);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (TryGetComponent(out AnimatorController controller))
+        {
+            controller.StopAnimation();
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (TryGetComponent(out AnimatorController controller))
+        {
+            controller.PlayAnimation();
+        }
+    }
 }

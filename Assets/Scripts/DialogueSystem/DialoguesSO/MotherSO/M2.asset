@@ -10,21 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bacd6b84da1a8f747afd7622046039b3, type: 3}
-  m_Name: F2
+  m_Name: M2
   m_EditorClassIdentifier: 
-  id: F2
+  id: M2
   isCompleted: 0
-  isPlayed: 0
   dialogue:
+  - Name: Sean
+    Speech:
+    - Hi Im back
   - Name: Mother
     Speech:
-    - Hello
-  - Name: Player
+    - Thank you my son, you are the best.
+  - Name: Sean
     Speech:
-    - Hi Mom
+    - Thanks Mom.
   - Name: Mother
     Speech:
-    - Sean can you get me this list of things from the market before lunch time.
-  - Name: Player
+    - and your dad was asking for you, I think he needs some help.
+  - Name: Sean
     Speech:
-    - Yes Mom. I am on my way.
+    - Ok mom

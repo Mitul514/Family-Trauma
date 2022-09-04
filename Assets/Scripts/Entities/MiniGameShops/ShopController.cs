@@ -25,13 +25,18 @@ public class ShopController : MonoBehaviour
         dialogueTrigger.OnTriggereDialogueEnd -= OnDialogueEnd;
     }
 
-    private void OnDialogueEnd()
+    private void OnDialogueEnd(DialogueTrigger trigger)
     {
         if (player != null)
         {
             player.StopMovement = false;
-            objectiveSO.isCompleted = true;
+            PlayerPrefController.Instance.UpdateObjectiveList(objectiveSO.id);
         }
+    }
+
+    public void SetLock(bool enable)
+    {
+        isLocked = enable;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

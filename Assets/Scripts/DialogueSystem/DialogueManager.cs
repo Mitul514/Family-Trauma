@@ -34,7 +34,6 @@ public class DialogueManager : MonoBehaviour
         continueBtn.SetActive(false);
         if (dialogues.Count == 0)
         {
-            onDialogueEnd?.Invoke();
             EndDialogue();
             return;
         }
@@ -56,9 +55,8 @@ public class DialogueManager : MonoBehaviour
 
     private void EndDialogue()
     {
-        m_scriptable.isPlayed = true;
-        gameObject.SetActive(false);
         print("End ..... ");
-        //onDialogueEnd?.Invoke();
+        gameObject.SetActive(false);
+        onDialogueEnd?.Invoke();
     }
 }

@@ -8,9 +8,11 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] protected DialogueScriptable dialogueSet;
     [SerializeField] protected Button continueBtn;
     [SerializeField] protected DialogueManager dialogueManager;
+    [SerializeField] protected EnititySO dialogueOfEntity;
 
-    public Action OnTriggereDialogueEnd;
-    public bool isThisDialogueSetPlayed => dialogueSet.isPlayed;
+    public Action<DialogueTrigger> OnTriggereDialogueEnd;
+    public string dialogueId => dialogueSet.id;
+    public EnititySO enititySO => dialogueOfEntity;
 
     private void Awake()
     {
@@ -32,8 +34,7 @@ public class DialogueTrigger : MonoBehaviour
     protected virtual void onDialogueEnd()
     {
         dialogueManager.gameObject.SetActive(false);
-        OnTriggereDialogueEnd?.Invoke();
-        dialogueSet.isPlayed = true;
+        OnTriggereDialogueEnd?.Invoke(this);
         gameObject.SetActive(false);
     }
 
@@ -45,7 +46,7 @@ public class DialogueTrigger : MonoBehaviour
         dialogueManager.DisplayNextSentence();
     }
 
-    public virtual void StartDialogue(string id)
+    public virtual void StartDialogue(string id, EnititySO enitity = null)
     {
         if (string.IsNullOrEmpty(id))
             id = this.id;

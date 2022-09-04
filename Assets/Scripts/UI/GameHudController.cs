@@ -11,6 +11,8 @@ public class GameHudController : MonoBehaviour
     private float timeScale = 0;
     private Coroutine coroutine;
 
+    [SerializeField] private List<string> idList;
+
     public void SetData(bool isTimerOn)
     {
         if (isTimerOn)
@@ -33,13 +35,19 @@ public class GameHudController : MonoBehaviour
     {
         if (coroutine != null)
             StopCoroutine(coroutine);
-        SetSliderValue(testValue);
+        SetSliderValue(testValue, "");
     }
 
-    public void SetSliderValue(float value)
+    public void SetSliderValue(float value, string id)
     {
-        timeScale = 0;
-        coroutine = StartCoroutine(MoveSlider(value));
+        if (!idList.Contains(id))
+            return;
+
+        if (PlayerPrefController.Instance.NarrativeIdLists.Contains(id) && value > 0)
+        {
+            timeScale = 0;
+            coroutine = StartCoroutine(MoveSlider(value));
+        }
     }
 
     private IEnumerator MoveSlider(float value)

@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bacd6b84da1a8f747afd7622046039b3, type: 3}
+  m_Name: N3
+  m_EditorClassIdentifier: 
+  id: N3
+  dialogue:
+  - Name: Author
+    Speech:
+    - "Sean had began to show some signs of video game engagements. Everything in
+      Sean\u2019s life was going good until his grades were out."
+  - Name: Author
+    Speech:
+    - "Unfortunately, Sean had scored very low grades and this made his parents unhappy.
+      His parent\u2019s behaviour towards him changed which made him sad."
+  - Name: Author
+    Speech:
+    - There were regular fights and arguments in the house. Sean wanted to fix this
+      and wanted to improve his relation with his parents.
+  - Name: Author
+    Speech:
+    - His friends passed with good grades and his friends started to make fun of
+      him, which made Sean very depressed.

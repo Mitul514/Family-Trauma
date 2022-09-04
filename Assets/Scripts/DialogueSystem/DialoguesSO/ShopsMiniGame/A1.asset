@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: A1
   m_EditorClassIdentifier: 
   id: A1
+  isCompleted: 0
   isPlayed: 0
   dialogue:
   - Name: Manager

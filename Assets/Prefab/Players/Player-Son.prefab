@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 7222983352675343954}
   - component: {fileID: 7222983352675343955}
   - component: {fileID: 7222983352675343953}
+  - component: {fileID: 5508753276097283948}
+  - component: {fileID: 3983196332553656781}
   m_Layer: 0
   m_Name: Player-Son
   m_TagString: Untagged
@@ -101,10 +103,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2.1
-  mother: {fileID: 11400000, guid: 830949778a6ee8142a06fda8fbd17fef, type: 2}
-  kitchen: {fileID: 11400000, guid: 4aca6bacd9806df4f87d8d22c98c13fe, type: 2}
-  door: {fileID: 11400000, guid: 03696a2f8a961754bbc92a12338d6d5d, type: 2}
-  sceneTransition: {fileID: 0}
 --- !u!50 &7222983352675343954
 Rigidbody2D:
   serializedVersion: 4
@@ -155,3 +153,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enititySO: {fileID: 11400000, guid: b844c9044c7eccf4288ce5d0cd274f61, type: 2}
+--- !u!95 &5508753276097283948
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7222983352675343959}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9f9a9ee0cbb619140a456aa867dc2768, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3983196332553656781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7222983352675343959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bba42add2ab4cb49b9ab09b4eb3efb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

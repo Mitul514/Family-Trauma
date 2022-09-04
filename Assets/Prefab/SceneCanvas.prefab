@@ -59,7 +59,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 1520963669
   m_SortingOrder: 100
   m_TargetDisplay: 0
@@ -127,7 +127,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee7cd4b1e2a38844ba13712ff55e313d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 1
+  delay: 1.5
+  dayChangeDelay: 3
   animator: {fileID: 5735817529721122267}
 --- !u!1 &5735817529721122265
 GameObject:

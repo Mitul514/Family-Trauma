@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bacd6b84da1a8f747afd7622046039b3, type: 3}
+  m_Name: F1
+  m_EditorClassIdentifier: 
+  id: F1
+  isCompleted: 0
+  dialogue:
+  - Name: Sean
+    Speech:
+    - Hello dad, mom siad u need some help.
+  - Name: Father
+    Speech:
+    - Yes Sean Can you help me buy some tools to fix the car.
+  - Name: Sean
+    Speech:
+    - "Yes Dad, but don\u2019t tell me to fix the car after this."
+  - Name: Father
+    Speech:
+    - "Haha. It\u2019s just that I am little lazy to go out without the car."
+  - Name: Sean
+    Speech:
+    - Ok on my way

@@ -13,20 +13,10 @@ MonoBehaviour:
   m_Name: F3
   m_EditorClassIdentifier: 
   id: F3
-  isPlayed: 0
   dialogue:
-  - Name: Sean
+  - Name: Father
     Speech:
-    - Hi Im back
-  - Name: Mother
+    - Sorry Sean, dont have time to talk now have to fix the car first
+  - Name: Father
     Speech:
-    - Thank you my son, you are the best.
-  - Name: Sean
-    Speech:
-    - Thanks Mom.
-  - Name: Mother
-    Speech:
-    - and your dad was asking for you, I think he needs some help.
-  - Name: Sean
-    Speech:
-    - Ok mom
+    - I will call you if i need some help with fixing

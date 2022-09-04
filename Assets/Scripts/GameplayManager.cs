@@ -5,38 +5,51 @@ using UnityEngine;
 
 public class GameplayManager : MonoBehaviour
 {
-    private const string key = "FirstLaunch";
     [SerializeField] protected DialogueManager dialogueManager;
     [SerializeField] protected SceneTransition sceneTransition;
     [SerializeField] protected List<GameObject> objectsToDisbleOnDialogueOn;
+    [SerializeField] protected string narrationId;
 
     [Header("DialogueTriggers")]
     [SerializeField] private DialogueTrigger firstdialogueTrigger;
+    [SerializeField] private DialogueTrigger dialogueTrigger1, dialogueTrigger2, dialogueTrigger3;
 
     private void Start()
     {
-        if (PlayerPrefs.GetInt(key) == 0)
+        if (!PlayerPrefs.HasKey(KeyConstants.FIRSTLAUNCH_key))
         {
-            PlayerPrefs.SetInt(key, 1);
+            PlayerPrefs.SetInt(KeyConstants.FIRSTLAUNCH_key, 0);
+        }
+
+        if (PlayerPrefs.GetInt(KeyConstants.FIRSTLAUNCH_key) == 0)
+        {
             dialogueManager.gameObject.SetActive(true);
             EnableDisableObjects(false);
             firstdialogueTrigger.StartDialogue("");
-            //firstdialogueTrigger.gameObject.SetActive(true);
         }
     }
 
     private void OnEnable()
     {
-        //firstdialogueTrigger.gameObject.SetActive(false);
-        if (!firstdialogueTrigger.isThisDialogueSetPlayed)
+        if (PlayerPrefs.GetInt(KeyConstants.FIRSTLAUNCH_key) == 0)
             firstdialogueTrigger.OnTriggereDialogueEnd += OnDialogueEnded;
+
+        dialogueTrigger1.OnTriggereDialogueEnd += OnNarrationDialogueEnded;
     }
 
-    private void OnDialogueEnded()
+    private void OnNarrationDialogueEnded(DialogueTrigger trigger)
+    {
+        dialogueTrigger1.OnTriggereDialogueEnd -= OnNarrationDialogueEnded;
+
+        PlayerPrefController.Instance.UpdateNarrativeList(trigger.dialogueId);
+    }
+
+    private void OnDialogueEnded(DialogueTrigger trigger)
     {
         firstdialogueTrigger.OnTriggereDialogueEnd -= OnDialogueEnded;
+
+        PlayerPrefs.SetInt(KeyConstants.FIRSTLAUNCH_key, 1);
         EnableDisableObjects(true);
-        //firstdialogueTrigger.gameObject.SetActive(false);
     }
 
     private void EnableDisableObjects(bool enable)
@@ -44,6 +57,30 @@ public class GameplayManager : MonoBehaviour
         foreach (GameObject go in objectsToDisbleOnDialogueOn)
         {
             go.SetActive(enable);
+        }
+    }
+
+    public void TriggerArcadeDialogue(string id)
+    {
+        if (PlayerPrefController.Instance.NarrativeIdLists.Contains(id) && id == narrationId)
+        {
+            dialogueTrigger1.StartDialogue("");
+        }
+    }
+
+    public void TriggerPhase2Dialogue(string id)
+    {
+        if (PlayerPrefController.Instance.NarrativeIdLists.Contains(id))
+        {
+            dialogueTrigger2.StartDialogue("");
+        }
+    }
+
+    public void TriggerPhase3Dialogue(string id)
+    {
+        if (PlayerPrefController.Instance.NarrativeIdLists.Contains(id))
+        {
+            dialogueTrigger3.StartDialogue("");
         }
     }
 }

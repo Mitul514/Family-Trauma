@@ -10,25 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bacd6b84da1a8f747afd7622046039b3, type: 3}
-  m_Name: F1
+  m_Name: N4
   m_EditorClassIdentifier: 
-  id: F1
-  isPlayed: 0
+  id: N4
   dialogue:
   - Name: Author
     Speech:
-    - Welcome,
+    - Sean had lost hope since he was not able to improve the relation with his parents
+      how much ever harder he tried.
   - Name: Author
     Speech:
-    - A life of a boy who wants be a good son and a good friends with everyone, he
-      never denies to anyone's request.
+    - 'It was becoming an hell for him to go home as his parents were still mad on
+      him. '
   - Name: Author
     Speech:
-    - But with so many requests comes harsh choices.
+    - But still Sean was having some hope and he kept trying.
   - Name: Author
     Speech:
-    - 'Come lets have play the life of Sean and help him make the better choice of
-      his life. '
-  - Name: Author
-    Speech:
-    - First Go and talk to your mother in the kitchen
+    - He had lost touch with his friends due to the humiliation he feels around them.
+      Sean began to loose hope.

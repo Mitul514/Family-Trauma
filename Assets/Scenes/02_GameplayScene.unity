@@ -171,6 +171,7 @@ MonoBehaviour:
   dialogueSet: {fileID: 11400000, guid: 2eff0a26cafef3c47a81138bd8d5ed63, type: 2}
   continueBtn: {fileID: 793920592}
   dialogueManager: {fileID: 793920591}
+  dialogueOfEntity: {fileID: 11400000, guid: 840e9585850b8d241aaf2aea68adeda5, type: 2}
 --- !u!1 &60340030
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,7 +383,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5735817528738333253, guid: acf16f7f3813c9c4ca16b8afbf8f11c1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5735817529721122266, guid: acf16f7f3813c9c4ca16b8afbf8f11c1, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -825,6 +826,7 @@ MonoBehaviour:
   dialogueSet: {fileID: 11400000, guid: ec320e389b7272442aa3518e87ac017b, type: 2}
   continueBtn: {fileID: 793920592}
   dialogueManager: {fileID: 793920591}
+  dialogueOfEntity: {fileID: 11400000, guid: 7a0572e95e1a4b04aa2bed84610c88c8, type: 2}
 --- !u!1 &553033020
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,6 +840,7 @@ GameObject:
   - component: {fileID: 553033024}
   - component: {fileID: 553033023}
   - component: {fileID: 553033025}
+  - component: {fileID: 553033026}
   m_Layer: 0
   m_Name: Arcade1
   m_TagString: Untagged
@@ -965,11 +968,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fa629cd89d4fea4c86fa19676e32c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLocked: 1
+  isLocked: 0
   playerEntity: {fileID: 11400000, guid: b844c9044c7eccf4288ce5d0cd274f61, type: 2}
   sceneTransition: {fileID: 323737043}
   dialogueTrigger: {fileID: 53104988}
   sceneToGo: 03_MiniGame
+  objectiveId: O2
+  narrativeIdForArcade: F7
+--- !u!114 &553033026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553033020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b970b57776c91f4ca2babe7c6bfa5c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &588628804
 GameObject:
   m_ObjectHideFlags: 0
@@ -983,6 +1000,7 @@ GameObject:
   - component: {fileID: 588628808}
   - component: {fileID: 588628807}
   - component: {fileID: 588628809}
+  - component: {fileID: 588628810}
   m_Layer: 0
   m_Name: Arcade2
   m_TagString: Untagged
@@ -1071,7 +1089,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81ca241b663b39042ad4712456753a8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enititySO: {fileID: 11400000, guid: 840e9585850b8d241aaf2aea68adeda5, type: 2}
+  enititySO: {fileID: 11400000, guid: 210fcf1592ff5684ea3ce76afbd4da7d, type: 2}
 --- !u!61 &588628808
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1110,11 +1128,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fa629cd89d4fea4c86fa19676e32c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLocked: 1
+  isLocked: 0
   playerEntity: {fileID: 11400000, guid: b844c9044c7eccf4288ce5d0cd274f61, type: 2}
   sceneTransition: {fileID: 323737043}
   dialogueTrigger: {fileID: 911726175}
   sceneToGo: 04_MiniGame
+  objectiveId: O2
+  narrativeIdForArcade: F7
+--- !u!114 &588628810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588628804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b970b57776c91f4ca2babe7c6bfa5c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &783622721
 GameObject:
   m_ObjectHideFlags: 0
@@ -1559,6 +1591,7 @@ MonoBehaviour:
   dialogueSet: {fileID: 11400000, guid: 16967be3e6cdd6b4892844aa6d5b30aa, type: 2}
   continueBtn: {fileID: 793920592}
   dialogueManager: {fileID: 793920591}
+  dialogueOfEntity: {fileID: 11400000, guid: 210fcf1592ff5684ea3ce76afbd4da7d, type: 2}
 --- !u!1 &942224720
 GameObject:
   m_ObjectHideFlags: 0
@@ -1572,6 +1605,7 @@ GameObject:
   - component: {fileID: 942224724}
   - component: {fileID: 942224723}
   - component: {fileID: 942224725}
+  - component: {fileID: 942224726}
   m_Layer: 0
   m_Name: Shop1
   m_TagString: Untagged
@@ -1703,6 +1737,18 @@ MonoBehaviour:
   playerEntity: {fileID: 11400000, guid: b844c9044c7eccf4288ce5d0cd274f61, type: 2}
   dialogueTrigger: {fileID: 2023711913}
   objectiveSO: {fileID: 11400000, guid: 113c38b1866b35444b05ca3ea3324b70, type: 2}
+--- !u!114 &942224726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942224720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b970b57776c91f4ca2babe7c6bfa5c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1001146791
 GameObject:
   m_ObjectHideFlags: 0
@@ -1917,6 +1963,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 793920590}
+  - {fileID: 1983378092}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2097,6 +2144,60 @@ MeshRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1362552609
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1362552610}
+  - component: {fileID: 1362552611}
+  m_Layer: 5
+  m_Name: Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1362552610
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362552609}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1983378092}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1362552611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362552609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57fa0d13065ae9943aebc46b797a0514, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: O3
+  dialogueSet: {fileID: 11400000, guid: bfde6194c21881f4e98c69ca47e81704, type: 2}
+  continueBtn: {fileID: 793920592}
+  dialogueManager: {fileID: 793920591}
+  dialogueOfEntity: {fileID: 0}
 --- !u!1 &1549223477
 GameObject:
   m_ObjectHideFlags: 0
@@ -2488,7 +2589,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7222983352675343956, guid: 4feee26da6ab21645955772d42b26c03, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.026890066
+      value: -7.83
       objectReference: {fileID: 0}
     - target: {fileID: 7222983352675343956, guid: 4feee26da6ab21645955772d42b26c03, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2568,6 +2669,68 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4feee26da6ab21645955772d42b26c03, type: 3}
+--- !u!1 &1983378091
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1983378092}
+  - component: {fileID: 1983378093}
+  m_Layer: 5
+  m_Name: StreetController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1983378092
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983378091}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1362552610}
+  m_Father: {fileID: 1232159761}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1983378093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983378091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aec49c93fc31ef24fa0ad3118a29b70f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arcade1: {fileID: 553033025}
+  arcade2: {fileID: 588628809}
+  shop1: {fileID: 942224725}
+  shop2: {fileID: 2009639954}
+  objectiveId1: O1
+  objectiveId2: O2
+  objectiveId3: O3
+  narrativeId1: M1
+  narrativeId2: F1
+  narrativeId3: N2
+  sceneTransition: {fileID: 323737043}
+  trigger: {fileID: 1362552611}
 --- !u!1 &2009639949
 GameObject:
   m_ObjectHideFlags: 0
@@ -2581,6 +2744,7 @@ GameObject:
   - component: {fileID: 2009639953}
   - component: {fileID: 2009639952}
   - component: {fileID: 2009639954}
+  - component: {fileID: 2009639955}
   m_Layer: 0
   m_Name: Shop2
   m_TagString: Untagged
@@ -2669,7 +2833,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81ca241b663b39042ad4712456753a8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enititySO: {fileID: 11400000, guid: b6a81ec320c4bb3429c3fe843a29e560, type: 2}
+  enititySO: {fileID: 11400000, guid: 7a0572e95e1a4b04aa2bed84610c88c8, type: 2}
 --- !u!61 &2009639953
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2708,10 +2872,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed094a98a48395340baf9900abffd841, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLocked: 1
+  isLocked: 0
   playerEntity: {fileID: 11400000, guid: b844c9044c7eccf4288ce5d0cd274f61, type: 2}
   dialogueTrigger: {fileID: 519969755}
   objectiveSO: {fileID: 11400000, guid: 15ae6ddd33d871a4e97ddb36d8e38d34, type: 2}
+--- !u!114 &2009639955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009639949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b970b57776c91f4ca2babe7c6bfa5c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2023711911
 GameObject:
   m_ObjectHideFlags: 0
@@ -2760,3 +2936,4 @@ MonoBehaviour:
   dialogueSet: {fileID: 11400000, guid: a676f1f2a378df148946010c19e6b9b1, type: 2}
   continueBtn: {fileID: 793920592}
   dialogueManager: {fileID: 793920591}
+  dialogueOfEntity: {fileID: 11400000, guid: b6a81ec320c4bb3429c3fe843a29e560, type: 2}

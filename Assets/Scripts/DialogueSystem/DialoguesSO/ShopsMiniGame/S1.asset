@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: S1
   m_EditorClassIdentifier: 
   id: S1
+  isCompleted: 0
   isPlayed: 0
   dialogue:
   - Name: Shopkeeper

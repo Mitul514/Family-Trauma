@@ -33,7 +33,9 @@ public class GameSelectorUI : MonoBehaviour
 
     private void onPlayClicked()
     {
-        playBtn.gameObject.SetActive(false);
+        //playBtn.gameObject.SetActive(false);
+        //exitBtn.gameObject.SetActive(false);
+        gameObject.SetActive(false);
         ShowFirstTest();
     }
 
@@ -48,6 +50,5 @@ public class GameSelectorUI : MonoBehaviour
     {
         if (firstpf != null)
             Destroy(firstpf.gameObject);
-        playBtn.gameObject.SetActive(true);
     }
 }

@@ -95,6 +95,12 @@ MonoBehaviour:
   timerController: {fileID: 4441856152767457825}
   trustMeterController: {fileID: 874475095981766469}
   testValue: 0
+  speed: 1
+  idList:
+  - M2
+  - M5
+  - F2
+  - N4
 --- !u!114 &2857946920764655865
 MonoBehaviour:
   m_ObjectHideFlags: 0

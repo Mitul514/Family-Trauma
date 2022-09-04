@@ -12,6 +12,7 @@ public class ChoicePopupUIController : MonoBehaviour
     [SerializeField, TextArea(5, 5)] public string popupMsg;
     [SerializeField] private Button continueBtn, backBtn;
     [SerializeField] private TextMeshProUGUI popupHeaderTxt, popupMsgTxt;
+    [SerializeField] private string narrationId;
 
     public Action OnContinueConfirmed, OnBackConfirm;
 
@@ -20,7 +21,15 @@ public class ChoicePopupUIController : MonoBehaviour
         continueBtn.onClick.AddListener(OnConfirmClicked);
         backBtn.onClick.AddListener(OnBackClicked);
 
-        LoadPopupData();
+        CheckForPhase();
+    }
+
+    private void CheckForPhase()
+    {
+        if (PlayerPrefController.Instance.NarrativeIdLists.Contains(narrationId))
+        {
+            backBtn.gameObject.SetActive(false);
+        }
     }
 
     private void OnConfirmClicked()
@@ -33,7 +42,7 @@ public class ChoicePopupUIController : MonoBehaviour
         OnBackConfirm?.Invoke();
     }
 
-    private void LoadPopupData()
+    public void LoadPopupData()
     {
         popupHeaderTxt.text = popupTitle;
         popupMsgTxt.text = popupMsg;

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bacd6b84da1a8f747afd7622046039b3, type: 3}
+  m_Name: N2
+  m_EditorClassIdentifier: 
+  id: N2
+  dialogue:
+  - Name: Author
+    Speech:
+    - 'Sean was regularly helping his parents and was having a good time with his
+      parents. '
+  - Name: Author
+    Speech:
+    - Sean was regularly helping his parents and was having a good time with his
+      parents.
+  - Name: Author
+    Speech:
+    - Sean then started to wait for his chance to help his parents with their shopping
+      so that he can find some time to play in the Arcade.
