@@ -27,7 +27,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private void OnDisable()
     {
-        continueBtn?.onClick.RemoveListener(TriggerDialogue);
+        continueBtn.onClick.RemoveListener(TriggerDialogue);
         dialogueManager.onDialogueEnd -= onDialogueEnd;
     }
 

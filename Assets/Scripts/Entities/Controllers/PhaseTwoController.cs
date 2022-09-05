@@ -6,8 +6,8 @@ using UnityEngine;
 public class PhaseTwoController : MonoBehaviour
 {
     [SerializeField] private string objectiveId, narrativeId;
-    [SerializeField] private string phaseEndId;
-	[SerializeField] private DialogueTrigger phaseThreeBeginTrigger, phaseThreeEndTrigger;
+    [SerializeField] private string phaseEndId, finalNarrationId;
+    [SerializeField] private DialogueTrigger phaseThreeBeginTrigger, phaseThreeEndTrigger, addictionTrigger;
     [SerializeField] private SceneTransition sceneTransition;
     [SerializeField] private GameHudController hudController;
     [SerializeField] private PlayerController playerController;
@@ -15,8 +15,10 @@ public class PhaseTwoController : MonoBehaviour
     private void OnEnable()
     {
         sceneTransition.dayChangeCompleted += OnDayChangeCompleted;
+        sceneTransition.sceneLoadCompleted += AddictionEndShow;
         phaseThreeBeginTrigger.OnTriggereDialogueEnd += OnDialogueEnded;
-		phaseThreeEndTrigger.OnTriggereDialogueEnd += OnDialogueEnded;
+        phaseThreeEndTrigger.OnTriggereDialogueEnd += OnDialogueEnded;
+        addictionTrigger.OnTriggereDialogueEnd += OnDialogueEnded;
 
         if (Phase3Ready())
         {
@@ -31,20 +33,22 @@ public class PhaseTwoController : MonoBehaviour
         sceneTransition.dayChangeCompleted -= OnDayChangeCompleted;
         phaseThreeBeginTrigger.OnTriggereDialogueEnd -= OnDialogueEnded;
         phaseThreeEndTrigger.OnTriggereDialogueEnd -= OnDialogueEnded;
-	}
+        addictionTrigger.OnTriggereDialogueEnd -= OnDialogueEnded;
+        sceneTransition.sceneLoadCompleted -= AddictionEndShow;
+    }
 
     private IEnumerator StartDayCahngeCoroutine()
-	{
-        yield return new WaitUntil(()=>sceneTransition.IsSceneLoaded);
+    {
+        yield return new WaitUntil(() => sceneTransition.IsSceneLoaded);
         playerController.StopMovement = true;
-		sceneTransition.StartDayChangeTransition();
-	}
+        sceneTransition.StartDayChangeTransition();
+    }
 
-	private void OnDialogueEnded(DialogueTrigger obj)
+    private void OnDialogueEnded(DialogueTrigger obj)
     {
         PlayerPrefController.Instance.UpdateNarrativeList(obj.dialogueId);
         playerController.StopMovement = false;
-		if (obj.dialogueId == phaseThreeBeginTrigger.dialogueId)
+        if (obj.dialogueId == phaseThreeEndTrigger.dialogueId)
             hudController.SetSliderValue(90, obj.dialogueId);
     }
 
@@ -69,8 +73,18 @@ public class PhaseTwoController : MonoBehaviour
         if (PlayerPrefController.Instance.NarrativeIdLists.Contains(phaseEndId) &&
             !PlayerPrefController.Instance.NarrativeIdLists.Contains(phaseThreeEndTrigger.dialogueId))
         {
-			playerController.StopMovement = true;
-			phaseThreeEndTrigger.StartDialogue("");
-		}
-	}
+            playerController.StopMovement = true;
+            phaseThreeEndTrigger.StartDialogue("");
+        }
+    }
+
+    private void AddictionEndShow()
+    {
+        if (PlayerPrefController.Instance.NarrativeIdLists.Contains(finalNarrationId) &&
+            !PlayerPrefController.Instance.NarrativeIdLists.Contains(addictionTrigger.dialogueId))
+        {
+            playerController.StopMovement = true;
+            addictionTrigger.StartDialogue("");
+        }
+    }
 }

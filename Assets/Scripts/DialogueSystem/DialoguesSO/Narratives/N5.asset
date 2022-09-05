@@ -10,16 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bacd6b84da1a8f747afd7622046039b3, type: 3}
-  m_Name: M5
+  m_Name: N5
   m_EditorClassIdentifier: 
-  id: M5
+  id: N5
   dialogue:
-  - Name: Mother
+  - Name: Author
     Speech:
-    - Thank god atleast you are of some use!
-  - Name: Sean
+    - Sean has been completely endulged himself into the virtual world
+  - Name: Author
     Speech:
-    - Mom you cannot be so rude!
-  - Name: Mother
-    Speech:
-    - You cannot talk to me like that!
+    - Now his addiction has been a regular part of his life which has totaly ruined
+      his connection with his family

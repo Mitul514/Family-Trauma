@@ -28,7 +28,7 @@ public class ChoicePopupUIController : MonoBehaviour
     {
         if (PlayerPrefController.Instance.NarrativeIdLists.Contains(narrationId))
         {
-            backBtn.gameObject.SetActive(false);
+            backBtn.interactable = false;
         }
     }
 

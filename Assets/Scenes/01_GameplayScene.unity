@@ -263,7 +263,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1640377745}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &67204945
 MonoBehaviour:
@@ -1242,8 +1242,10 @@ MonoBehaviour:
   objectiveId: O3
   narrativeId: N2
   phaseEndId: M5
+  finalNarrationId: N4
   phaseThreeBeginTrigger: {fileID: 138612671}
   phaseThreeEndTrigger: {fileID: 743239774}
+  addictionTrigger: {fileID: 1559825341}
   sceneTransition: {fileID: 1569133442}
   hudController: {fileID: 2857946920764655865}
   playerController: {fileID: 7222983353061051049}
@@ -1786,6 +1788,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1559825340
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1559825342}
+  - component: {fileID: 1559825341}
+  m_Layer: 0
+  m_Name: Trigger5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1559825341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559825340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57fa0d13065ae9943aebc46b797a0514, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: N5
+  dialogueSet: {fileID: 11400000, guid: 60498e8ebfe1511479e93e34b2559ddc, type: 2}
+  continueBtn: {fileID: 793920591}
+  dialogueManager: {fileID: 793920592}
+  dialogueOfEntity: {fileID: 11400000, guid: 3b69dffb1910c4d448bdd4070f4a2255, type: 2}
+--- !u!4 &1559825342
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559825340}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.022537047, y: -0.2737507, z: 29.366287}
+  m_LocalScale: {x: 1.32294, y: 1.32294, z: 1.32294}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1640377745}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1568305242
 GameObject:
   m_ObjectHideFlags: 0
@@ -2024,6 +2075,7 @@ MonoBehaviour:
   - {fileID: 1520605758771323738}
   - {fileID: 2857946920764655864}
   narrationId: F2
+  menuSceneName: 00_Menu
   firstdialogueTrigger: {fileID: 1937741530}
   dialogueTrigger1: {fileID: 590393289}
 --- !u!4 &1640377745
@@ -2042,6 +2094,7 @@ Transform:
   - {fileID: 590393288}
   - {fileID: 138612670}
   - {fileID: 743239773}
+  - {fileID: 1559825342}
   - {fileID: 67204944}
   m_Father: {fileID: 0}
   m_RootOrder: 1
