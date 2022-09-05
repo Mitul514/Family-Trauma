@@ -10,6 +10,7 @@ public class StreetController : MonoBehaviour
     [SerializeField] private string objectiveId1, objectiveId2, objectiveId3, narrativeId1, narrativeId2, narrativeId3;
     [SerializeField] private SceneTransition sceneTransition;
     [SerializeField] private DialogueTrigger trigger;
+    [SerializeField] protected string menuSceneName = "00_Menu";
 
     private void OnEnable()
     {
@@ -23,6 +24,14 @@ public class StreetController : MonoBehaviour
     {
         sceneTransition.sceneLoadCompleted -= OnSceneLoadCompleted;
         trigger.OnTriggereDialogueEnd -= OnDialogueEnded;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            sceneTransition.StartSceneTransition(menuSceneName);
+        }
     }
 
     private void OnDialogueEnded(DialogueTrigger obj)

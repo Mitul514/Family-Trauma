@@ -8,7 +8,7 @@ public class GameplayManager : MonoBehaviour
     [SerializeField] protected DialogueManager dialogueManager;
     [SerializeField] protected SceneTransition sceneTransition;
     [SerializeField] protected List<GameObject> objectsToDisbleOnDialogueOn;
-    [SerializeField] protected string narrationId;
+    [SerializeField] protected string narrationId, menuSceneName = "00_Menu";
 
     [Header("DialogueTriggers")]
     [SerializeField] private DialogueTrigger firstdialogueTrigger;
@@ -26,6 +26,14 @@ public class GameplayManager : MonoBehaviour
             dialogueManager.gameObject.SetActive(true);
             EnableDisableObjects(false);
             firstdialogueTrigger.StartDialogue("");
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            sceneTransition.StartSceneTransition(menuSceneName);
         }
     }
 
@@ -64,7 +72,7 @@ public class GameplayManager : MonoBehaviour
 	/// To trigger N2 narration
 	/// </summary>
 	/// <param name="id"></param>
-    public void TriggerArcadeDialogue(string id)  
+    public void TriggerArcadeDialogue(string id)
     {
         if (PlayerPrefController.Instance.NarrativeIdLists.Contains(id) && id == narrationId)
         {

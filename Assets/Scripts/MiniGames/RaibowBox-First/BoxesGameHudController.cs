@@ -21,8 +21,8 @@ public class BoxesGameHudController : MonoBehaviour
 
     public void SetData(BoxManager boxManager)
     {
-        UpdateUI(boxManager.BoxData);
-        m_boxData = boxManager.BoxData;
+        UpdateUI(boxManager.SelectedBoxData);
+        m_boxData = boxManager.SelectedBoxData;
         m_boxManager = boxManager;
 
         boxManager.OnChanceUse += OnChanceUsed;
@@ -39,7 +39,7 @@ public class BoxesGameHudController : MonoBehaviour
     {
         gameSelectorUI.gameObject.SetActive(true);
         gameObject.SetActive(false);
-        UpdateUI(m_boxManager.BoxData);
+        UpdateUI(m_boxManager.SelectedBoxData);
 
         Destroy(choicePf.gameObject, 0.5f);
     }

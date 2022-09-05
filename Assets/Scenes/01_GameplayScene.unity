@@ -1246,7 +1246,7 @@ MonoBehaviour:
   phaseThreeEndTrigger: {fileID: 743239774}
   sceneTransition: {fileID: 1569133442}
   hudController: {fileID: 2857946920764655865}
-  playerController: {fileID: 0}
+  playerController: {fileID: 7222983353061051049}
 --- !u!4 &879658379
 Transform:
   m_ObjectHideFlags: 0
@@ -1969,6 +1969,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5735817528738333253, guid: acf16f7f3813c9c4ca16b8afbf8f11c1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: acf16f7f3813c9c4ca16b8afbf8f11c1, type: 3}
 --- !u!114 &1569133442 stripped
@@ -2650,6 +2654,10 @@ PrefabInstance:
       propertyPath: dialogueManager
       value: 
       objectReference: {fileID: 793920592}
+    - target: {fileID: 6289576294669056523, guid: 6bc0254966b23ac429ecaaebdda5f4bb, type: 3}
+      propertyPath: m_Transition
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6726562733565113790, guid: 6bc0254966b23ac429ecaaebdda5f4bb, type: 3}
       propertyPath: continueBtn
       value: 
@@ -2997,3 +3005,14 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7222983352675343959, guid: 4feee26da6ab21645955772d42b26c03, type: 3}
   m_PrefabInstance: {fileID: 7222983353061051047}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7222983353061051049 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7222983352675343958, guid: 4feee26da6ab21645955772d42b26c03, type: 3}
+  m_PrefabInstance: {fileID: 7222983353061051047}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7222983353061051048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5d4ef739e0c5184f81ec914a17eab97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

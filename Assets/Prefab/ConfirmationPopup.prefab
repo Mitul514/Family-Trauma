@@ -761,6 +761,7 @@ MonoBehaviour:
   backBtn: {fileID: 4666041180275008263}
   popupHeaderTxt: {fileID: 4666041179211804400}
   popupMsgTxt: {fileID: 4666041179452360685}
+  narrationId: N4
 --- !u!1 &4666041180489580875
 GameObject:
   m_ObjectHideFlags: 0

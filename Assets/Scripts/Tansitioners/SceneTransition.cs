@@ -8,6 +8,7 @@ public class SceneTransition : MonoBehaviour
 {
     [SerializeField] private float delay, dayChangeDelay;
     [SerializeField] private Animator animator;
+    [SerializeField] private GameObject textObject;
 
     public Action sceneLoadCompleted, dayChangeCompleted;
     public bool IsSceneLoaded { get; private set; }
@@ -24,7 +25,7 @@ public class SceneTransition : MonoBehaviour
         yield return new WaitForSeconds(delay);
         IsSceneLoaded = true;
         gameObject.SetActive(false);
-	}
+    }
 
     #region Scene Transition
     public void StartSceneTransition(string sceneName = "")
@@ -59,10 +60,12 @@ public class SceneTransition : MonoBehaviour
     private IEnumerator OnDayChangeTransition()
     {
         animator.SetTrigger("Exit");
+        textObject.SetActive(true);
         yield return new WaitForSeconds(dayChangeDelay);
-		animator.SetTrigger("Enter");
+        animator.SetTrigger("Enter");
         yield return new WaitForSeconds(delay);
         dayChangeCompleted?.Invoke();
+        textObject.SetActive(false);
         gameObject.SetActive(false);
     }
     #endregion

@@ -381,14 +381,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 5735817528738333253, guid: acf16f7f3813c9c4ca16b8afbf8f11c1, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5735817529721122266, guid: acf16f7f3813c9c4ca16b8afbf8f11c1, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: acf16f7f3813c9c4ca16b8afbf8f11c1, type: 3}
 --- !u!114 &323737043 stripped
@@ -2627,42 +2619,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7222983352675343957, guid: 4feee26da6ab21645955772d42b26c03, type: 3}
-      propertyPath: m_SortingOrder
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 7222983352675343958, guid: 4feee26da6ab21645955772d42b26c03, type: 3}
-      propertyPath: sceneToGo
-      value: 01_GameplayScene
-      objectReference: {fileID: 0}
-    - target: {fileID: 7222983352675343958, guid: 4feee26da6ab21645955772d42b26c03, type: 3}
-      propertyPath: doorEntity
-      value: 
-      objectReference: {fileID: 11400000, guid: 03696a2f8a961754bbc92a12338d6d5d, type: 2}
-    - target: {fileID: 7222983352675343958, guid: 4feee26da6ab21645955772d42b26c03, type: 3}
-      propertyPath: singleEntity
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7222983352675343958, guid: 4feee26da6ab21645955772d42b26c03, type: 3}
-      propertyPath: dialogueManager
-      value: 
-      objectReference: {fileID: 793920591}
-    - target: {fileID: 7222983352675343958, guid: 4feee26da6ab21645955772d42b26c03, type: 3}
-      propertyPath: sceneTransition
-      value: 
-      objectReference: {fileID: 323737043}
-    - target: {fileID: 7222983352675343958, guid: 4feee26da6ab21645955772d42b26c03, type: 3}
-      propertyPath: sceneChangeEntity
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7222983352675343958, guid: 4feee26da6ab21645955772d42b26c03, type: 3}
-      propertyPath: sceneChangeEntityList.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7222983352675343958, guid: 4feee26da6ab21645955772d42b26c03, type: 3}
-      propertyPath: sceneChangeEntityList.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: b6a81ec320c4bb3429c3fe843a29e560, type: 2}
     - target: {fileID: 7222983352675343959, guid: 4feee26da6ab21645955772d42b26c03, type: 3}
       propertyPath: m_Name
       value: Player-Son

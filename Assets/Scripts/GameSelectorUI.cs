@@ -42,6 +42,7 @@ public class GameSelectorUI : MonoBehaviour
     private void ShowFirstTest()
     {
         firstpf = Instantiate(boxManagerPf);
+        firstpf.SetLevelData();
         hudController.gameObject.SetActive(true);
         hudController.SetData(firstpf);
     }

@@ -46,7 +46,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Tile: {fileID: 4324468274532208087, guid: c8b65bd80e731481b9e90d1ad3d87762, type: 3}
-  m_boxData: {fileID: 11400000, guid: 37f1e4d28bbd5324386a05e5a3b01bb7, type: 2}
+  m_LevelData:
+  - {fileID: 11400000, guid: 0ad3738c809b1aa419db6b9aeec39525, type: 2}
+  - {fileID: 11400000, guid: 37f1e4d28bbd5324386a05e5a3b01bb7, type: 2}
+  - {fileID: 11400000, guid: f4dc5e0f08ea59f4d9af993f3edd095d, type: 2}
+  - {fileID: 11400000, guid: 08c46b7f32eec6b4b8785cd4c0bd2278, type: 2}
+  - {fileID: 11400000, guid: 4c6e68dffc904b949aa6dffe0837a66b, type: 2}
   nonRepeatedRandomNumbers: {fileID: 7358258977696707773}
 --- !u!1 &7109901017821658123
 GameObject:

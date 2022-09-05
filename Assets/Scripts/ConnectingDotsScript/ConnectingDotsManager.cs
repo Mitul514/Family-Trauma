@@ -9,32 +9,18 @@ public class ConnectingDotsManager : MonoBehaviour
     public static ConnectingDotsManager Instance { get; set; }
 
     #region Variables
-
     public event Action MenuTrigger;
-
     public event Action PauseTrigger;
-
     public event Action GameOverTrigger;
-
     public event Action<string> GameTrigger;
 
-    public event Action PrevLevelDestroyTrigger;
-
     private int _count = 1;
-
     public GameStates States = GameStates.None;
 
-    [HideInInspector]
-    public bool DestroyPrevLevel;
-
+    [HideInInspector] public bool DestroyPrevLevel;
     [HideInInspector] public int MoveCount;
-
-    [HideInInspector]
-    public int TotalMoveCount = 10;
-
-    [HideInInspector]
-    public int FlowMatchedCount = 0;
-
+    [HideInInspector] public int TotalMoveCount = 10;
+    [HideInInspector] public int FlowMatchedCount = 0;
     #endregion
 
     private void Awake()
@@ -56,13 +42,8 @@ public class ConnectingDotsManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Escape) && States == GameStates.GamePlayState)
             SetState(GameStates.PauseState);
-        if (DestroyPrevLevel)
-        {
-            PrevLevelDestroyTrigger?.Invoke();
-            DestroyPrevLevel = false;
-        }
     }
-        
+
     public void SetState(GameStates states, string level = "")
     {
         switch (states)
