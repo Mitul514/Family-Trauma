@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class DialogueIdReciever : MonoBehaviour
 {
-    public bool CanFetchTriggerID(List<DialogueTrigger> tiggersList, out DialogueTrigger trigger)
+    public bool CanFetchTriggerID(List<DialogueTrigger> triggersList, out DialogueTrigger trigger)
     {
         trigger = null;
 
         if (!TryGetComponent(out EntityType entityType))
             return false;
 
-        foreach (DialogueTrigger tig in tiggersList)
+        foreach (DialogueTrigger tig in triggersList)
         {
             if (entityType.EnititySO == tig.enititySO &&
                 !PlayerPrefController.Instance.hasIdInListForKey(KeyConstants.NARRATIVE_KEY, tig.dialogueId))

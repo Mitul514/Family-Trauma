@@ -10,6 +10,7 @@ public class SceneTransition : MonoBehaviour
     [SerializeField] private Animator animator;
 
     public Action sceneLoadCompleted, dayChangeCompleted;
+    public bool IsSceneLoaded { get; private set; }
 
     private void Start()
     {
@@ -19,10 +20,11 @@ public class SceneTransition : MonoBehaviour
     private IEnumerator OnSceneUpdate()
     {
         animator.SetTrigger("Enter");
-        yield return new WaitForSeconds(delay);
         sceneLoadCompleted?.Invoke();
+        yield return new WaitForSeconds(delay);
+        IsSceneLoaded = true;
         gameObject.SetActive(false);
-    }
+	}
 
     #region Scene Transition
     public void StartSceneTransition(string sceneName = "")
@@ -42,6 +44,7 @@ public class SceneTransition : MonoBehaviour
             SceneManager.LoadScene(sceneName);
 
         yield return new WaitForSeconds(delay);
+        IsSceneLoaded = true;
         gameObject.SetActive(false);
     }
     #endregion
@@ -57,9 +60,9 @@ public class SceneTransition : MonoBehaviour
     {
         animator.SetTrigger("Exit");
         yield return new WaitForSeconds(dayChangeDelay);
-        animator.SetTrigger("Enter");
-        dayChangeCompleted?.Invoke();
+		animator.SetTrigger("Enter");
         yield return new WaitForSeconds(delay);
+        dayChangeCompleted?.Invoke();
         gameObject.SetActive(false);
     }
     #endregion

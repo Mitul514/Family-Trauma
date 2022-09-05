@@ -54,8 +54,11 @@ public class PlayerPrefController : MonoBehaviour
         if (objectiveIdLists == null)
             objectiveIdLists = new List<string>();
 
-        objectiveIdLists.Add(val);
-        SetListToPlayerPref(KeyConstants.OBJECTIVE_KEY);
+        if (!objectiveIdLists.Contains(val))
+        {
+            objectiveIdLists.Add(val);
+            SetListToPlayerPref(KeyConstants.OBJECTIVE_KEY);
+        }
     }
 
     public void UpdateNarrativeList(string val)
@@ -63,8 +66,11 @@ public class PlayerPrefController : MonoBehaviour
         if (narrativeIdLists == null)
             narrativeIdLists = new List<string>();
 
-        narrativeIdLists.Add(val);
-        SetListToPlayerPref(KeyConstants.NARRATIVE_KEY);
+        if (!narrativeIdLists.Contains(val))
+        {
+            narrativeIdLists.Add(val);
+            SetListToPlayerPref(KeyConstants.NARRATIVE_KEY);
+        }
     }
 
     public void SetListToPlayerPref(string key)
@@ -103,6 +109,20 @@ public class PlayerPrefController : MonoBehaviour
 
         return false;
     }
+
+    public void UpdateTrustMeterKey(float val)
+    {
+        PlayerPrefs.SetFloat(KeyConstants.TRUSTMETER_KEY, val);
+    }
+
+    public float GetMeterValue()
+	{
+		if (PlayerPrefs.HasKey(KeyConstants.TRUSTMETER_KEY))
+		{
+            return PlayerPrefs.GetFloat(KeyConstants.TRUSTMETER_KEY);
+		}
+        return 0;
+	}
 
     [ContextMenu("Check Player Pref values")]
     public void TestPlayerPrefValues()

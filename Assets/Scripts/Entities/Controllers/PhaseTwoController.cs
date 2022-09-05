@@ -6,47 +6,71 @@ using UnityEngine;
 public class PhaseTwoController : MonoBehaviour
 {
     [SerializeField] private string objectiveId, narrativeId;
-    [SerializeField] private DialogueTrigger phaseThreeTrigger;
+    [SerializeField] private string phaseEndId;
+	[SerializeField] private DialogueTrigger phaseThreeBeginTrigger, phaseThreeEndTrigger;
     [SerializeField] private SceneTransition sceneTransition;
     [SerializeField] private GameHudController hudController;
+    [SerializeField] private PlayerController playerController;
 
     private void OnEnable()
     {
         sceneTransition.dayChangeCompleted += OnDayChangeCompleted;
-        phaseThreeTrigger.OnTriggereDialogueEnd += OnDialogueEnded;
+        phaseThreeBeginTrigger.OnTriggereDialogueEnd += OnDialogueEnded;
+		phaseThreeEndTrigger.OnTriggereDialogueEnd += OnDialogueEnded;
 
         if (Phase3Ready())
         {
-            sceneTransition.StartDayChangeTransition();
+            StartCoroutine(StartDayCahngeCoroutine());
         }
+
+        ShowPhase3End();
     }
 
     private void OnDisable()
     {
         sceneTransition.dayChangeCompleted -= OnDayChangeCompleted;
-        phaseThreeTrigger.OnTriggereDialogueEnd -= OnDialogueEnded;
-    }
+        phaseThreeBeginTrigger.OnTriggereDialogueEnd -= OnDialogueEnded;
+        phaseThreeEndTrigger.OnTriggereDialogueEnd -= OnDialogueEnded;
+	}
 
-    private void OnDialogueEnded(DialogueTrigger obj)
+    private IEnumerator StartDayCahngeCoroutine()
+	{
+        yield return new WaitUntil(()=>sceneTransition.IsSceneLoaded);
+        playerController.StopMovement = true;
+		sceneTransition.StartDayChangeTransition();
+	}
+
+	private void OnDialogueEnded(DialogueTrigger obj)
     {
         PlayerPrefController.Instance.UpdateNarrativeList(obj.dialogueId);
-
-        hudController.SetSliderValue(90, obj.dialogueId);
+        playerController.StopMovement = false;
+		if (obj.dialogueId == phaseThreeBeginTrigger.dialogueId)
+            hudController.SetSliderValue(90, obj.dialogueId);
     }
 
     private void OnDayChangeCompleted()
     {
-        phaseThreeTrigger.StartDialogue("");
+        phaseThreeBeginTrigger.StartDialogue("");
     }
 
     private bool Phase3Ready()
     {
         if (PlayerPrefController.Instance.ObjectiveIdLists.Contains(objectiveId) &&
             PlayerPrefController.Instance.NarrativeIdLists.Contains(narrativeId) &&
-            !PlayerPrefController.Instance.NarrativeIdLists.Contains(phaseThreeTrigger.dialogueId))
+            !PlayerPrefController.Instance.NarrativeIdLists.Contains(phaseThreeBeginTrigger.dialogueId))
         {
             return true;
         }
         return false;
     }
+
+    private void ShowPhase3End()
+    {
+        if (PlayerPrefController.Instance.NarrativeIdLists.Contains(phaseEndId) &&
+            !PlayerPrefController.Instance.NarrativeIdLists.Contains(phaseThreeEndTrigger.dialogueId))
+        {
+			playerController.StopMovement = true;
+			phaseThreeEndTrigger.StartDialogue("");
+		}
+	}
 }

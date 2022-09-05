@@ -1240,10 +1240,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveId: O3
-  narrativeId: N3
-  phaseThreeTrigger: {fileID: 743239774}
+  narrativeId: N2
+  phaseEndId: M5
+  phaseThreeBeginTrigger: {fileID: 138612671}
+  phaseThreeEndTrigger: {fileID: 743239774}
   sceneTransition: {fileID: 1569133442}
   hudController: {fileID: 2857946920764655865}
+  playerController: {fileID: 0}
 --- !u!4 &879658379
 Transform:
   m_ObjectHideFlags: 0
@@ -2015,13 +2018,10 @@ MonoBehaviour:
   - {fileID: 1829572673}
   - {fileID: 7222983353061051048}
   - {fileID: 1520605758771323738}
-  - {fileID: 2563468557647060108}
   - {fileID: 2857946920764655864}
   narrationId: F2
   firstdialogueTrigger: {fileID: 1937741530}
   dialogueTrigger1: {fileID: 590393289}
-  dialogueTrigger2: {fileID: 138612671}
-  dialogueTrigger3: {fileID: 743239774}
 --- !u!4 &1640377745
 Transform:
   m_ObjectHideFlags: 0
@@ -2635,6 +2635,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1640377744}
     - target: {fileID: 3888732275767649617, guid: 6bc0254966b23ac429ecaaebdda5f4bb, type: 3}
+      propertyPath: gameHudController
+      value: 
+      objectReference: {fileID: 2857946920764655865}
+    - target: {fileID: 3888732275767649617, guid: 6bc0254966b23ac429ecaaebdda5f4bb, type: 3}
       propertyPath: objectiveDialogueTrigger
       value: 
       objectReference: {fileID: 67204945}
@@ -2749,6 +2753,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1640377744}
     - target: {fileID: 3090442725082518048, guid: bf5e2605f18681c4e93ded79b10e6e19, type: 3}
+      propertyPath: gameHudController
+      value: 
+      objectReference: {fileID: 2857946920764655865}
+    - target: {fileID: 3090442725082518048, guid: bf5e2605f18681c4e93ded79b10e6e19, type: 3}
       propertyPath: objectiveDialogueTrigger
       value: 
       objectReference: {fileID: 67204945}
@@ -2774,11 +2782,6 @@ PrefabInstance:
       objectReference: {fileID: 793920592}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf5e2605f18681c4e93ded79b10e6e19, type: 3}
---- !u!1 &2563468557647060108 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 724726390373524720, guid: bf5e2605f18681c4e93ded79b10e6e19, type: 3}
-  m_PrefabInstance: {fileID: 2563468557647060107}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2857946920764655863
 PrefabInstance:
   m_ObjectHideFlags: 0

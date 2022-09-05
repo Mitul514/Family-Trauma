@@ -12,7 +12,7 @@ public class GameplayManager : MonoBehaviour
 
     [Header("DialogueTriggers")]
     [SerializeField] private DialogueTrigger firstdialogueTrigger;
-    [SerializeField] private DialogueTrigger dialogueTrigger1, dialogueTrigger2, dialogueTrigger3;
+    [SerializeField] private DialogueTrigger dialogueTrigger1;
 
     private void Start()
     {
@@ -60,27 +60,15 @@ public class GameplayManager : MonoBehaviour
         }
     }
 
-    public void TriggerArcadeDialogue(string id)
+    /// <summary>
+	/// To trigger N2 narration
+	/// </summary>
+	/// <param name="id"></param>
+    public void TriggerArcadeDialogue(string id)  
     {
         if (PlayerPrefController.Instance.NarrativeIdLists.Contains(id) && id == narrationId)
         {
             dialogueTrigger1.StartDialogue("");
-        }
-    }
-
-    public void TriggerPhase2Dialogue(string id)
-    {
-        if (PlayerPrefController.Instance.NarrativeIdLists.Contains(id))
-        {
-            dialogueTrigger2.StartDialogue("");
-        }
-    }
-
-    public void TriggerPhase3Dialogue(string id)
-    {
-        if (PlayerPrefController.Instance.NarrativeIdLists.Contains(id))
-        {
-            dialogueTrigger3.StartDialogue("");
         }
     }
 }

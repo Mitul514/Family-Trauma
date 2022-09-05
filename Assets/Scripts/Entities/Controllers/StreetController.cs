@@ -33,7 +33,7 @@ public class StreetController : MonoBehaviour
     private void StartArcadeObjective()
     {
         if (PlayerPrefController.Instance.NarrativeIdLists.Contains(narrativeId3) &&
-            !PlayerPrefController.Instance.NarrativeIdLists.Contains(objectiveId3))
+            !PlayerPrefController.Instance.ObjectiveIdLists.Contains(objectiveId3))
         {
             trigger.StartDialogue("");
         }

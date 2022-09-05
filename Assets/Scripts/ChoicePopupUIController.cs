@@ -21,10 +21,10 @@ public class ChoicePopupUIController : MonoBehaviour
         continueBtn.onClick.AddListener(OnConfirmClicked);
         backBtn.onClick.AddListener(OnBackClicked);
 
-        CheckForPhase();
+        CheckForPhaseBegin();
     }
 
-    private void CheckForPhase()
+    private void CheckForPhaseBegin()
     {
         if (PlayerPrefController.Instance.NarrativeIdLists.Contains(narrationId))
         {

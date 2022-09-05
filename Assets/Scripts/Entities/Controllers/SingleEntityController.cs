@@ -36,6 +36,7 @@ public class SingleEntityController : MonoBehaviour
     {
         float val = 0;
         loopabledialogueTrigger.OnTriggereDialogueEnd -= OnDialogueEnded;
+
         if (dialogueTrigger.enititySO != GetComponent<EntityType>().EnititySO)
         {
             return;
@@ -46,7 +47,8 @@ public class SingleEntityController : MonoBehaviour
 
         PlayerPrefController.Instance.UpdateNarrativeList(dialogueTrigger.dialogueId);
 
-        if (dialogueTrigger.dialogueId == positiveId && !string.IsNullOrEmpty(positiveId))
+		#region Trust Meter
+		if (dialogueTrigger.dialogueId == positiveId && !string.IsNullOrEmpty(positiveId))
         {
             val = positiveVal;
         }
@@ -55,9 +57,9 @@ public class SingleEntityController : MonoBehaviour
             val = negativeVal;
         }
         gameHudController.SetSliderValue(val, dialogueTrigger.dialogueId);
+		#endregion
 
-        StartCoroutine(PlayNarrationDialogue(dialogueTrigger));
-
+		StartCoroutine(PlayNarrationDialogue(dialogueTrigger));
         if (!PlayerPrefController.Instance.ObjectiveIdLists.Contains(objectiveId))
         {
             StartCoroutine(PlayObjectiveDialogue());

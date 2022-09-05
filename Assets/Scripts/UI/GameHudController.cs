@@ -13,16 +13,15 @@ public class GameHudController : MonoBehaviour
 
     [SerializeField] private List<string> idList;
 
-    public void SetData(bool isTimerOn)
+	private void OnEnable()
+	{
+        SetData();
+	}
+
+	public void SetData()
     {
-        if (isTimerOn)
-        {
-            timerController.gameObject.SetActive(true);
-        }
-        else
-        {
-            trustMeterController.gameObject.SetActive(true);
-        }
+        var value = PlayerPrefController.Instance.GetMeterValue();
+		trustMeterController.slider.value = value == 0 ? trustMeterController.slider.value : value;        
     }
 
     public void RemoveHud()
@@ -47,6 +46,7 @@ public class GameHudController : MonoBehaviour
         {
             timeScale = 0;
             coroutine = StartCoroutine(MoveSlider(value));
+            PlayerPrefController.Instance.UpdateTrustMeterKey(value);
         }
     }
 
